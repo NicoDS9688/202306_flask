@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: cursive;
+}
+
+.square_line {
+    height: 250px;
+    width: 700px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+}
+
+</style>
+</head>
+<div class = "container">
+    <h1>Welcome!</h1>
+    <div class = "square_line">
+        {% for i in range(0, 3) %}
+        <div class="square"></div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

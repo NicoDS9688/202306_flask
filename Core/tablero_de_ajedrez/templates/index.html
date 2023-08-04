@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Tablero de Ajedrez</title>
+    <style>
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat({{ cols }}, 50px);
+            grid-template-rows: repeat({{ rows }}, 50px);
+        }
+
+        :root {
+            --color1: {{ color1 }};
+            --color2: {{ color2 }};
+        }
+
+        .color1 {
+            background-color: var(--color1);
+        }
+
+        .color2 {
+            background-color: var(--color2);
+        }
+
+    </style>
+    </head>
+
+<body>
+    <div class="board">
+        {% for row in range(rows) %}
+        {% for col in range(cols) %}
+        <div class="square {% if (row + col) % 2 == 0 %}color1{% else %}color2{% endif %}"></div>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</body>

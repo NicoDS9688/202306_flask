@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Dojo Fruit Store Assignment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong>Dojo Fruit Store</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+  
+      <main role="main">
+  
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Dojo Fruits</h1>
+              <div class="container d-flex">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/apple.png')}}" alt="Apple image"" class="card-img-top mt-5">
+                  <div class="card-body">
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text">An apple is a round, edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found.</p>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/blackberry.png')}}" alt="Blackberry image"" class="card-img-top" >
+                  <div class="card-body">
+                    <h5 class="card-title">Blackberry</h5>
+                    <p class="card-text">Blackberry fruit is in the form of a berry. The berries are 1 to 3cm diameter, changing colour from green to red to black as it ripens — each berry an aggregate of many single-seeded juicy segments (drupelets). Fruit develops from late December until April.</p>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/raspberry.png')}}" alt="Raspberry image"" class="card-img-top" >
+                  <div class="card-body">
+                    <h5 class="card-title">Raspberry</h5>
+                    <p class="card-text">The raspberry is the fruit of the raspberry shrub or bramble. This plant grows wild in several regions of Europe, although it is also cultivated, becoming quite an important crop. It is a small, conical or round fruit with a velvety red or yellowish skin. The pulp is very aromatic and has a bittersweet taste.</p>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/strawberry.png')}}" alt="Strawberry image"" class="card-img-top" >
+                  <div class="card-body">
+                    <h5 class="card-title">Strawberry</h5>
+                    <p class="card-text">A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries. They're also delicious. Strawberries have tiny edible seeds, which grow all over their surface.</p>
+                  </div>
+                </div>
+              </div>
+      
+
+            <p>
+              <a href="/" class="btn btn-primary my-2">Go back</a>
+            </p>
+          </div>
+        </section>
+  
+      </main>
+      
+</body>
+</html>
+
+
+
+

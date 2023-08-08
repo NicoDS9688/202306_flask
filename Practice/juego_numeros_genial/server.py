@@ -37,7 +37,11 @@ def check_number():
 
     return render_template("game.html", response=response, square_color=square_color)
 
-
+@app.route("/reset/", methods=["GET"])
+def reset_number():
+    """Metodo que resetea el numero"""
+    session.pop("num", None)
+    return redirect("/")
 
 if __name__=="__main__":
     app.run(debug=True)

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Ninja Money</title>
+</head>
+
+<body>
+    <main>
+        <div class="village container text-center">
+            <div class="row row-cols-auto text-start mt-5 justify-content-center ">
+                <div class="col">
+                    <h4>Your Gold:</h4>
+                </div>
+                <div class="col">
+                    <div class="container border rounded border-dark">
+                        <h6 class="h6 mt-1">{{session["gold"]}}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-2 border rounded border-dark" style="margin-right: 10px;">
+                    <h3>Farm</h3>
+                    <h6>(earns 10-20 golds)</h6>
+                    <form action="/process_money/" method="post">
+                        <input type="hidden" name="building" value="farm">
+                        <button class="btn btn-success mb-3" type="submit">Find Gold!</button>
+                    </form>
+                </div>
+                <div class="col-md-2 border rounded border-dark" style="margin-right: 10px;">
+                    <h3>Cave</h3>
+                    <h6>(earns 5-10 golds)</h6>
+                    <form action="/process_money/" method="post">
+                        <input type="hidden" name="building" value="cave">
+                        <button class="btn btn-success mb-3" type="submit">Find Gold!</button>
+                    </form>
+                </div>
+                <div class="col-md-2 border rounded border-dark" style="margin-right: 10px;">
+                    <h3>House</h3>
+                    <h6>(earns 2-5 golds)</h6>
+                    <form action="/process_money/" method="post">
+                        <input type="hidden" name="building" value="house">
+                        <button class="btn btn-success mb-3" type="submit">Find Gold!</button>
+                    </form>
+                </div>
+                <div class="col-md-2 border rounded border-dark" style="margin-right: 10px;">
+                    <h3>Casino</h3>
+                    <h6>(earns/takes 0-50 golds)</h6>
+                    <form action="/process_money/" method="post">
+                        <input type="hidden" name="building" value="casino">
+                        <button class="btn btn-success mb-3" type="submit">Find Gold!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-3 text-start">
+                <h5>Activities:</h5>
+            </div>
+            <div class="row border rounded border-dark">
+                <div class="col">
+                    <div class="scrollable-div text-start" style="height: 200px; overflow-y: scroll;">
+                        {% for activity in session["activities"] %}
+                            {{ activity | safe }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% if "game_result" in session %}
+                <div class="text-center mt-3">
+            {% if session["game_result"] == "win" %}
+                    <h3>Congratulations! You won!</h3>
+            {% elif session["game_result"] == "lose" %}
+                    <h3>Game Over! You've reached the maximum moves.</h3>
+            {% endif %}
+                    <form action="/restart/" method="get">
+                        <button class="btn btn-primary" type="submit">Restart</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
